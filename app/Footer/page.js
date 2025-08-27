@@ -1,0 +1,132 @@
+"use client";
+import { motion } from "framer-motion";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
+import Img from "../../public/optima app.png";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-100 text-gray-800">
+      
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+        
+        <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+          <div className="flex items-center mb-4">
+            <img src={Img.src} alt="Logo" width={40} height={40} className="mr-2" />
+            <h2 className="text-2xl font-bold">Optima Web Design</h2>
+          </div>
+          <p className="text-sm mb-4">
+            At Optima Web Design, we create modern, user-friendly websites that help your business grow online.
+            From design to development, we handle everything—so you can focus on running your business.
+          </p>
+          
+          <div className="flex space-x-4 text-xl">
+            <motion.a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="hover:text-blue-600 transition"
+            >
+              <FaFacebookF />
+            </motion.a>
+            <motion.a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="hover:text-pink-500 transition"
+            >
+              <FaInstagram />
+            </motion.a>
+            <motion.a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="hover:text-black transition"
+            >
+              <FaXTwitter />
+            </motion.a>
+            <motion.a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="hover:text-blue-700 transition"
+            >
+              <FaLinkedinIn />
+            </motion.a>
+          </div>
+        </motion.div>
+
+        
+        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+            <li>
+              <a href="/" className="hover:underline">Home</a>
+            </li>
+            <li>
+              <a href="/About" className="hover:underline">About</a>
+            </li>
+            <li>
+              <a href="/Service" className="hover:underline">Services</a>
+            </li>
+            <li>
+              <a href="/Blog" className="hover:underline">Blog</a>
+            </li>
+            <li>
+              <a href="/Faq" className="hover:underline">FAQ</a>
+            </li>
+            <li>
+              <a href="/Contact" className="hover:underline">Contact</a>
+            </li>
+          </ul>
+        </motion.div>
+
+        
+        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
+          <h3 className="text-lg font-semibold mb-4">Contact</h3>
+          <ul className="space-y-2">
+            <li>
+              <a href="tel:+917990402535" className="hover:underline">+91 79904 02535</a>
+            </li>
+            <li>
+              <a href="mailto:optimawebdesigns12@gmail.com" className="hover:underline">
+                optimawebdesigns12@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/917990402535" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                WhatsApp
+              </a>
+            </li>
+          </ul>
+        </motion.div>
+
+        
+        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}>
+          <h3 className="text-lg font-semibold mb-4">Office Hours</h3>
+          <p>Monday to Saturday</p>
+          <p>09:00 AM to 05:00 PM</p>
+        </motion.div>
+      </motion.div>
+
+      
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="border-t border-gray-300 text-center py-4 text-sm"
+      >
+        © 2025 <span className="text-black font-semibold">Optima webdesigns</span>. All Rights Reserved.
+      </motion.div>
+    </footer>
+  );
+}
