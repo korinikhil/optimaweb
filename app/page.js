@@ -6,10 +6,12 @@ import Smart from "./Smart/page";
 import LatestProjects from "./latest/page";
 import Testimonials from "./Customer/page";
 import BlogPage from "./Blog/page";
+import Loader from "./component/Loader";
 
 export default function Hero() {
   return (
     <>
+    <Loader /> 
       <section className="relative flex flex-col justify-center items-center text-center min-h-screen bg-[#fdfdfd] overflow-hidden px-4 md:px-8">
         <div className="hidden md:flex absolute top-20 left-10 w-44 h-44 justify-center items-center">
           <div className="absolute w-44 h-44 rounded-full border border-gray-300 animate-spin-slow">
