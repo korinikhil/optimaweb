@@ -82,7 +82,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 mt-[5rem]">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-extrabold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-4,.,b;b;bbkk00 *:">
           Our Services

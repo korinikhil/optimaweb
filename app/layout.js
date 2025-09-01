@@ -36,7 +36,7 @@ export const metadata = {
     siteName: "Optima Web Design",
     images: [
       {
-        url: "/og-image.jpg", // ✅ public/ folder me image rakho (size 1200x630 recommended)
+        url: "/logo.ico", // ✅ public/ folder me image rakho (size 1200x630 recommended)
         width: 1200,
         height: 630,
         alt: "Optima Web Design - Website Design Agency",
@@ -60,7 +60,7 @@ export const metadata = {
     google: "cUFO7fssNmwaOftA0nKPrCKSHQCr_OxfhlvLF7XlIGM", // ✅ apna google verification code
   },
   icons: {
-    icon: "/favicon.ico", // ✅ favicon.ico public/ folder me rakho
+    icon: "/logo.ico", // ✅ favicon.ico public/ folder me rakho
   },
 };
 
