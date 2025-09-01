@@ -37,9 +37,9 @@ export default function Footer() {
             <h2 className="text-2xl font-bold">Optima Web Design</h2>
           </div>
           <p className="text-sm mb-4">
-            At Optima Web Design, we create modern, user-friendly websites that
-            help your business grow online. From design to development, we handle
-            everything—so you can focus on running your business.
+            Optima Web Design: Your Growth Partner
+
+            Optima Web Design is a well-known web design firm that provides website design solutions to small enterprises. We create responsive and contemporary website development that enhances your online growth. We organize everything from designing to developing, so you can only focus on running your business. Our professional web design service has the potential to make your business successful online.
           </p>
 
           {/* Social Links */}

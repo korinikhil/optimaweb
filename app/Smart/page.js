@@ -108,14 +108,15 @@ export default function Smart() {
 
         <div className="w-full md:w-1/2 space-y-5 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            Smart Web Solutions For Success by Optima WebDesigns
+            Smart Web Solutions For Your Business by Optima WebDesigns
           </h2>
           <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-            Optima WebDesigns is your partner in growth. We&apos;ve been able to
-            deliver web solutions to over 500 clients. We design websites that
-            not only look great but also perform and grow better for small
-            startups and well-established brands alike. Our goal is to take your
-            online presence to the next level.
+            
+            Optima WebDesign is your one-stop shop for professional web design services. We excel at creating small business websites that not only look great but also help you acquire new customers.
+
+            We have an individual policy for every client, providing unique and quality responsive website development. If you're looking for an affordable web design firm that really cares about your needs, we're the perfect choice for you.
+
+            We want to take your business to the next level, and the services of our digital marketing agency in India will definitely get you there.
           </p>
           <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
             Let&apos;s Go
