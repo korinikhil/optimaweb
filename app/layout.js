@@ -14,32 +14,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Optima WebDesigns | Professional Website Design & Development Agency",
+  title: "Optima Web Design | Affordable Website Design & Development Worldwide",
   description:
-    "Optima WebDesigns is a professional web design and development agency that builds responsive, SEO-friendly, and high-performing websites to grow your business online.",
+    "Cost-effective and professional website development and design services for entrepreneurs, startups, and businesses globally. Optima Web Design provides SEO-friendly, mobile-friendly, and visually appealing websites that improve your online presence and grow your business. Obtain your free quote and consultation today and grow your digital presence across the world.",
   keywords: [
-    "Optima WebDesigns",
-    "website design agency",
-    "professional web design",
-    "responsive web development",
+    "Optima Web Design",
+    "affordable website design",
+    "professional web development",
     "SEO-friendly websites",
-    "custom web design",
-    "UI/UX design services",
+    "responsive web design",
+    "custom website solutions",
     "business website development",
-    "modern website solutions",
-    "web design company India"
+    "modern website design company",
+    "web design agency worldwide"
   ],
   openGraph: {
-    title: "Optima WebDesigns | Professional Website Design & Development Agency",
+    title: "Optima Web Design | Affordable Website Design & Development Worldwide",
     description:
-      "Grow your business online with Optima WebDesigns. We create responsive, SEO-friendly, and customized websites designed to attract customers and increase sales.",
+      "Grow your business online with Optima Web Design. We create responsive, SEO-friendly, and customized websites designed to attract customers and increase sales.",
     url: "https://www.optimawebdesign.in",
-    siteName: "Optima WebDesigns",
+    siteName: "Optima Web Design",
     images: [
       {
+        url: "/og-image.jpg", // ✅ public/ folder me image rakho (size 1200x630 recommended)
         width: 1200,
         height: 630,
-        alt: "Optima WebDesigns - Website Design Agency",
+        alt: "Optima Web Design - Website Design Agency",
       },
     ],
     locale: "en_US",
@@ -47,28 +47,28 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Optima WebDesigns | Professional Website Design & Development Agency",
+    title: "Optima Web Design | Affordable Website Design & Development Worldwide",
     description:
-      "Optima WebDesigns offers modern, responsive, and SEO-friendly websites tailored for your business success.",
+      "Optima Web Design offers affordable, responsive, and SEO-friendly websites tailored for your business success.",
+    images: ["/og-image.jpg"], // ✅ same image use kar sakte ho
   },
   robots: {
     index: true,
     follow: true,
   },
   verification: {
-    google: "cUFO7fssNmwaOftA0nKPrCKSHQCr_OxfhlvLF7XlIGM", // ✅ sirf code string daalo
+    google: "cUFO7fssNmwaOftA0nKPrCKSHQCr_OxfhlvLF7XlIGM", // ✅ apna google verification code
   },
   icons: {
-    icon: "/favicon.ico", // yaha apna ico file ka path do (public/ folder me rakho)
+    icon: "/favicon.ico", // ✅ favicon.ico public/ folder me rakho
   },
 };
-
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/logo.ico" sizes="any" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
