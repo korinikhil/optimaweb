@@ -51,8 +51,13 @@ export default function Hero() {
           <h1 className="text-3xl md:text-[35px] font-bold leading-snug mt-4 opacity-0 animate-slideUp delay-200">
             Website Design Company in Ahmedabad | Professional Website Development Services in Gujarat
           </h1>
-          <p className="text-[8px] md:text-[10px] mt-[1rem]">We are Gujarat's top web design company with experience in business website development service to Ahmedabad and other cities.
-            We are the leading web design firm in Gujarat, offering business website development services to companies in Ahmedabad and elsewhere.</p>
+          <p className="text-[8px] md:text-[10px] mt-[1rem]">
+            We are Gujarat&apos;s top web design company with experience in
+            business website development service to Ahmedabad and other cities.
+            We are the leading web design firm in Gujarat, offering business
+            website development services to companies in Ahmedabad and
+            elsewhere.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 opacity-0 animate-fadeIn delay-300">
             {/* WhatsApp Redirect Button */}
             <a
