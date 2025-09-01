@@ -13,28 +13,32 @@ const cards = [
     desc: "We create custom, modern UI/UX concepts to bring your ideal site to life.",
     color: "rgba(255, 231, 199, 1)",
     icon: <FiLayout className="text-5xl text-black" />,
-    gradient: "linear-gradient(135deg, rgba(255,231,199,1) 0%, rgba(255,180,120,1) 100%)",
+    gradient:
+      "linear-gradient(135deg, rgba(255,231,199,1) 0%, rgba(255,180,120,1) 100%)",
   },
   {
     title: "Responsive Layout",
     desc: "Our designs deliver a flawless user experience, customized for all screen sizes and devices.",
     color: "rgba(230,229,228,1)",
     icon: <FiSmartphone className="text-5xl text-black" />,
-    gradient: "linear-gradient(135deg, rgba(230,229,228,1) 0%, rgba(200,200,200,1) 100%)",
+    gradient:
+      "linear-gradient(135deg, rgba(230,229,228,1) 0%, rgba(200,200,200,1) 100%)",
   },
   {
     title: "Smooth Animation",
     desc: "We add beautiful animations and effects to provide an energetic and interactive site.",
     color: "rgba(225,248,220,1)",
     icon: <FiTrendingUp className="text-5xl text-black" />,
-    gradient: "linear-gradient(135deg, rgba(225,248,220,1) 0%, rgba(150,220,150,1) 100%)",
+    gradient:
+      "linear-gradient(135deg, rgba(225,248,220,1) 0%, rgba(150,220,150,1) 100%)",
   },
   {
     title: "SEO Optimization",
     desc: "We boost your web visibility and search engine rankings with advanced, fact-driven SEO techniques.",
     color: "rgba(253,226,228,1)",
     icon: <FiSearch className="text-5xl text-black" />,
-    gradient: "linear-gradient(135deg, rgba(253,226,228,1) 0%, rgba(255,180,190,1) 100%)",
+    gradient:
+      "linear-gradient(135deg, rgba(253,226,228,1) 0%, rgba(255,180,190,1) 100%)",
   },
 ];
 
@@ -77,7 +81,7 @@ export default function Smart() {
         stagger: 0.2,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: serviceCardsRef.current[0],
+          trigger: serviceCardsRef.current,
           start: "top 90%",
         },
       }
