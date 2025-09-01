@@ -98,7 +98,7 @@ export default function Smart() {
           {/* Next.js optimized Image */}
           <Image
             src={img}
-            alt="Latest Project 2"
+            alt="Smart Web Solutions"
             width={800}
             height={600}
             className="w-full object-cover aspect-video md:aspect-square rounded-lg"
@@ -111,12 +111,19 @@ export default function Smart() {
             Smart Web Solutions For Your Business by Optima WebDesigns
           </h2>
           <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-            
-            Optima WebDesign is your one-stop shop for professional web design services. We excel at creating small business websites that not only look great but also help you acquire new customers.
-
-            We have an individual policy for every client, providing unique and quality responsive website development. If you're looking for an affordable web design firm that really cares about your needs, we're the perfect choice for you.
-
-            We want to take your business to the next level, and the services of our digital marketing agency in India will definitely get you there.
+            Optima WebDesign is your one-stop shop for professional web design
+            services. We excel at creating small business websites that not only
+            look great but also help you acquire new customers.
+            <br />
+            <br />
+            We have an individual policy for every client, providing unique and
+            quality responsive website development. If you&apos;re looking for
+            an affordable web design firm that really cares about your needs,
+            we&apos;re the perfect choice for you.
+            <br />
+            <br />
+            We want to take your business to the next level, and the services of
+            our digital marketing agency in India will definitely get you there.
           </p>
           <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
             Let&apos;s Go
