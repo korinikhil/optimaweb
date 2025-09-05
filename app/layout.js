@@ -1,7 +1,9 @@
+// app/layout.js (or layout.tsx)
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Header/page";
 import Footer from "./Footer/page";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +28,7 @@ export const metadata = {
     "custom website solutions",
     "business website development",
     "modern website design company",
-    "web design agency worldwide"
+    "web design agency worldwide",
   ],
   openGraph: {
     title: "Optima Web Design | Affordable Website Design & Development Worldwide",
@@ -36,7 +38,7 @@ export const metadata = {
     siteName: "Optima Web Design",
     images: [
       {
-        url: "/logo.ico", // ✅ public/ folder me image rakho (size 1200x630 recommended)
+        url: "/logo.ico",
         width: 1200,
         height: 630,
         alt: "Optima Web Design - Website Design Agency",
@@ -50,17 +52,17 @@ export const metadata = {
     title: "Optima Web Design | Affordable Website Design & Development Worldwide",
     description:
       "Optima Web Design offers affordable, responsive, and SEO-friendly websites tailored for your business success.",
-    images: ["/og-image.jpg"], // ✅ same image use kar sakte ho
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
   },
   verification: {
-    google: "cUFO7fssNmwaOftA0nKPrCKSHQCr_OxfhlvLF7XlIGM", // ✅ apna google verification code
+    google: "cUFO7fssNmwaOftA0nKPrCKSHQCr_OxfhlvLF7XlIGM",
   },
   icons: {
-    icon: "/logo.ico", // ✅ favicon.ico public/ folder me rakho
+    icon: "/logo.ico",
   },
 };
 
@@ -68,18 +70,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* If you also keep /favicon.ico, both are fine. */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {/* Tawk.to Script */}
-        <script id="tawk-to" strategy="afterInteractive">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Tawk.to (inline loader) */}
+        <Script id="tawk-to" strategy="afterInteractive">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
               var s1=document.createElement("script"),
-                  s0=document.getElementsByTagName("script")[0];
+                  s0=document.getElementsByTagName("script");
               s1.async=true;
               s1.src='https://embed.tawk.to/6876017e749494190c45200f/1j06fbm1j';
               s1.charset='UTF-8';
@@ -87,34 +88,31 @@ export default function RootLayout({ children }) {
               s0.parentNode.insertBefore(s1,s0);
             })();
           `}
-        </script>
+        </Script>
 
-        <script
-          async
+        {/* Google Analytics (source) */}
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-YZRLDNXD0J"
-        />
-
-        <script
-          id="google-analytics"
           strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-YZRLDNXD0J');
-            `,
-          }}
         />
 
-        <script
-          type="text/javascript"
-          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-          id="aisensy-wa-widget"
-          widget-id="aaalbk"
-        >
-        </script>
+        {/* Google Analytics (init) */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YZRLDNXD0J');
+          `}
+        </Script>
 
+        {/* AiSensy or other widget script */}
+        <Script
+          id="aisensy-wa-widget"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          strategy="afterInteractive"
+          data-widget-id="aaalbk"
+        />
 
         <Navbar />
         {children}
