@@ -118,13 +118,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* AiSensy widget (non-blocking) */}
-        <Script
-          id="aisensy-wa-widget"
-          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-          strategy="afterInteractive"
-          data-widget-id="aaalbk"
-        />
+      
 
         <Navbar />
         {children}
