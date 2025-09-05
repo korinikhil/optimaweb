@@ -65,9 +65,7 @@ export default function RootLayout({ children }) {
       <head>
         {/* Keep a favicon reference if needed */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Tawk.to loader via next/script */}
+           {/* Tawk.to loader via next/script */}
         <Script id="tawk-to" strategy="afterInteractive">
           {`
             // Tawk.to embed
@@ -108,6 +106,30 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
           data-widget-id="aaalbk"
         />
+        {/* Google Tag Manager */}
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NLHH3XGV');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+        
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NLHH3XGV"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
 
         <Navbar />
         {children}
