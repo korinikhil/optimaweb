@@ -10,7 +10,7 @@
   import Loader from "./component/Loader";
   import Link from "next/link";
   // import BlogPage from "./blog/page";
-  import BlogPage from "./blog/page";
+  import BlogPage from "./Blog/page";
 
   export default function Hero() {
     // Apna WhatsApp number dalna (country code ke sath, bina + ke)
