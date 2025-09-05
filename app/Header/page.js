@@ -118,14 +118,14 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="/about"
+              href="/About"
               className="block px-4 py-2 hover:bg-gray-100"
               onClick={() => setIsOpen(false)}
             >
               About Us
             </Link>
             <Link
-              href="/service"
+              href="/Service"
               className="block px-4 py-2 hover:bg-gray-100"
               onClick={() => setIsOpen(false)}
             >
@@ -139,7 +139,7 @@ export default function Navbar() {
               Blog
             </Link>
             <Link
-              href="/contact"
+              href="/Contact"
               className="block px-4 py-2 hover:bg-gray-100"
               onClick={() => setIsOpen(false)}
             >
