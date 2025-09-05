@@ -71,10 +71,10 @@ export default function Hero() {
             </a>
 
             <Link href="/latest" passHref legacyBehavior>
-    <button className="bg-black cursor-pointer text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
-        View Portfolio
-    </button>
-</Link>
+              <button className="bg-black cursor-pointer text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
+                View Portfolio
+              </button>
+            </Link>
           </div>
         </div>
 
