@@ -106,7 +106,7 @@ export default function Hero() {
       </section>
       <About />
       <Smart />
-      <BlogPage />
+      <BlogPage/>
       <LatestProjects />
       <Testimonials />
     </>
