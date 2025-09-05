@@ -125,7 +125,7 @@ export default function Smart() {
             We want to take your business to the next level, and the services of
             our digital marketing agency in India will definitely get you there.
           </p>
-          <Link href="/Service" passHref legacyBehavior>
+          <Link href="/Service" >
             <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
               Let&apos;s Go
             </button>

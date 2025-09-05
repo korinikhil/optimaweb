@@ -70,7 +70,7 @@ export default function Hero() {
               <span>💬</span> Start Your Project
             </a>
 
-            <Link href="/latest" passHref legacyBehavior>
+            <Link href="/latest" >
               <button className="bg-black cursor-pointer text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
                 View Portfolio
               </button>
