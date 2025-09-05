@@ -66,7 +66,7 @@ export default function Navbar() {
           <Link href="/Service" className="hover:text-black transition">
             Services
           </Link>
-          <Link href="/Blog" className="hover:text-black transition">
+          <Link href="/blog" className="hover:text-black transition">
             Blog
           </Link>
           <Link href="/Contact" className="hover:text-black transition">
@@ -132,7 +132,7 @@ export default function Navbar() {
               Services
             </Link>
             <Link
-              href="/Blog"
+              href="/blog"
               className="block px-4 py-2 hover:bg-gray-100"
               onClick={() => setIsOpen(false)}
             >
