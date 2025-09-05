@@ -5,15 +5,8 @@ import Navbar from "./Header/page";
 import Footer from "./Footer/page";
 import Script from "next/script";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata = {
   title: "Optima Web Design | Affordable Website Design & Development Worldwide",
@@ -37,12 +30,7 @@ export const metadata = {
     url: "https://www.optimawebdesign.in",
     siteName: "Optima Web Design",
     images: [
-      {
-        url: "/logo.ico",
-        width: 1200,
-        height: 630,
-        alt: "Optima Web Design - Website Design Agency",
-      },
+      { url: "/logo.ico", width: 1200, height: 630, alt: "Optima Web Design - Website Design Agency" },
     ],
     locale: "en_US",
     type: "website",
@@ -63,12 +51,55 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Keep a favicon reference if needed */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-           {/* Tawk.to loader via next/script */}
+
+        {/* Google Tag Manager (GTM) - load after interactive in head */}
+        <Script
+          id="gtm"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s),
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-NLHH3XGV');
+            `,
+          }}
+        />
+
+        {/* Google Analytics (source) */}
+        <Script
+          id="ga-src"
+          src="https://www.googletagmanager.com/gtag/js?id=G-YZRLDNXD0J"
+          strategy="afterInteractive"
+        />
+
+        {/* Google Analytics (init) */}
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-YZRLDNXD0J');
+          `}
+        </Script>
+      </head>
+
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* GTM noscript must be in body */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NLHH3XGV"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
+        {/* Tawk.to via next/script (fix getElementsByTagName and insertion) */}
         <Script id="tawk-to" strategy="afterInteractive">
           {`
-            // Tawk.to embed
             window.Tawk_API = window.Tawk_API || {};
             window.Tawk_LoadStart = new Date();
             (function() {
@@ -78,58 +109,22 @@ export default function RootLayout({ children }) {
               s1.charset = "UTF-8";
               s1.setAttribute("crossorigin", "*");
               var s0 = document.getElementsByTagName("script");
-              s0.parentNode.insertBefore(s1, s0);
+              if (s0 && s0.parentNode) {
+                s0.parentNode.insertBefore(s1, s0);
+              } else {
+                document.head.appendChild(s1);
+              }
             })();
           `}
         </Script>
 
-        {/* Google Analytics (source) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-YZRLDNXD0J"
-          strategy="afterInteractive"
-        />
-
-        {/* Google Analytics (init) */}
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){ dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-YZRLDNXD0J');
-          `}
-        </Script>
-
-        {/* AiSensy or other widget script */}
+        {/* AiSensy widget (non-blocking) */}
         <Script
           id="aisensy-wa-widget"
           src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
           strategy="afterInteractive"
           data-widget-id="aaalbk"
         />
-        {/* Google Tag Manager */}
-        <Script
-          id="google-tag-manager"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-NLHH3XGV');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-        
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NLHH3XGV"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
 
         <Navbar />
         {children}
