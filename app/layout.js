@@ -1,4 +1,4 @@
-// app/layout.js (or layout.tsx)
+// app/layout.js
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Header/page";
@@ -54,38 +54,33 @@ export const metadata = {
       "Optima Web Design offers affordable, responsive, and SEO-friendly websites tailored for your business success.",
     images: ["/og-image.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  verification: {
-    google: "cUFO7fssNmwaOftA0nKPrCKSHQCr_OxfhlvLF7XlIGM",
-  },
-  icons: {
-    icon: "/logo.ico",
-  },
+  robots: { index: true, follow: true },
+  verification: { google: "cUFO7fssNmwaOftA0nKPrCKSHQCr_OxfhlvLF7XlIGM" },
+  icons: { icon: "/logo.ico" },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* If you also keep /favicon.ico, both are fine. */}
+        {/* Keep a favicon reference if needed */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Tawk.to (inline loader) */}
+        {/* Tawk.to loader via next/script */}
         <Script id="tawk-to" strategy="afterInteractive">
           {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-              var s1=document.createElement("script"),
-                  s0=document.getElementsByTagName("script");
-              s1.async=true;
-              s1.src='https://embed.tawk.to/6876017e749494190c45200f/1j06fbm1j';
-              s1.charset='UTF-8';
-              s1.setAttribute('crossorigin','*');
-              s0.parentNode.insertBefore(s1,s0);
+            // Tawk.to embed
+            window.Tawk_API = window.Tawk_API || {};
+            window.Tawk_LoadStart = new Date();
+            (function() {
+              var s1 = document.createElement("script");
+              s1.async = true;
+              s1.src = "https://embed.tawk.to/6876017e749494190c45200f/1j06fbm1j";
+              s1.charset = "UTF-8";
+              s1.setAttribute("crossorigin", "*");
+              var s0 = document.getElementsByTagName("script");
+              s0.parentNode.insertBefore(s1, s0);
             })();
           `}
         </Script>
@@ -100,7 +95,7 @@ export default function RootLayout({ children }) {
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag(){ dataLayer.push(arguments); }
             gtag('js', new Date());
             gtag('config', 'G-YZRLDNXD0J');
           `}
