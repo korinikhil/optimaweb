@@ -1,13 +1,66 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    mobile: "",
+    email: "",
+    website: "",
+    message: "",
+    city: "",
+    state: "",
+    address: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.name || !formData.mobile || !formData.email) {
+      alert("Please fill Name, Mobile, and Email before submitting.");
+      return;
+    }
+
+    const whatsappMessage = `
+*New Enquiry from Website:*
+
+*Name:* ${formData.name}
+*Company:* ${formData.company || "N/A"}
+*Mobile:* ${formData.mobile}
+*Email:* ${formData.email}
+*Website:* ${formData.website || "N/A"}
+*City:* ${formData.city || "N/A"}
+*State:* ${formData.state || "N/A"}
+*Address:* ${formData.address || "N/A"}
+
+*Message:*
+${formData.message || "N/A"}
+    `;
+
+    // Encode and open WhatsApp link
+    const whatsappLink = `https://wa.me/919428884897?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(whatsappLink, "_blank");
+  };
+
   return (
     <section className="min-h-screen bg-[#fdfdfd] flex items-center justify-center px-6 py-16">
       <div className="max-w-6xl w-full flex flex-col items-center gap-12">
-        
-        
+        {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -16,116 +69,158 @@ export default function Contact() {
           className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-8 border border-gray-200"
         >
           <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
+          <form
+            onSubmit={handleSubmit}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Enter your name"
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                required
               />
             </div>
-            
             <div>
-              <label htmlFor="company" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="company"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Company Name
               </label>
               <input
                 type="text"
                 id="company"
+                value={formData.company}
+                onChange={handleChange}
                 placeholder="Enter company name"
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
               />
             </div>
-            
+
             <div>
-              <label htmlFor="mobile" className="block text-sm font-semibold text-gray-700">
-                Mobile
+              <label
+                htmlFor="mobile"
+                className="block text-sm font-semibold text-gray-700"
+              >
+                Mobile <span className="text-red-500">*</span>
               </label>
               <input
                 type="tel"
                 id="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
                 placeholder="Enter your mobile number"
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                required
               />
             </div>
-            
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
-                Email
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold text-gray-700"
+              >
+                Email <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Enter your email"
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                required
               />
             </div>
-            
             <div>
-              <label htmlFor="website" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="website"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Website
               </label>
               <input
                 type="url"
                 id="website"
+                value={formData.website}
+                onChange={handleChange}
                 placeholder="Enter your website"
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
               />
             </div>
-            
             <div>
-              <label htmlFor="message" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="message"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Message
               </label>
               <textarea
                 id="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows="3"
                 placeholder="Your message..."
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
               ></textarea>
             </div>
-            
             <div>
-              <label htmlFor="city" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="city"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 City
               </label>
               <input
                 type="text"
                 id="city"
+                value={formData.city}
+                onChange={handleChange}
                 placeholder="Enter your city"
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
               />
             </div>
-            
             <div>
-              <label htmlFor="state" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="state"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 State
               </label>
               <input
                 type="text"
                 id="state"
+                value={formData.state}
+                onChange={handleChange}
                 placeholder="Enter your state"
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
               />
             </div>
-            
             <div className="md:col-span-2">
-              <label htmlFor="address" className="block text-sm font-semibold text-gray-700">
+              <label
+                htmlFor="address"
+                className="block text-sm font-semibold text-gray-700"
+              >
                 Address
               </label>
               <input
                 type="text"
                 id="address"
+                value={formData.address}
+                onChange={handleChange}
                 placeholder="Enter your full address"
                 className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
               />
             </div>
-            
             <div className="md:col-span-2">
               <button
                 type="submit"
@@ -137,38 +232,38 @@ export default function Contact() {
           </form>
         </motion.div>
 
-        
+        {/* Contact Cards */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-4xl mt-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl mx-auto mt-12 px-4"
         >
           {[
-            { 
-              icon: <FaWhatsapp className="text-4xl text-green-500" />, 
-              title: "WhatsApp", 
-              detail: "+91 94288 84897", 
-              link: "https://wa.me/919428884897" 
+            {
+              icon: <FaWhatsapp className="text-5xl text-green-500" />,
+              title: "WhatsApp",
+              detail: "+91 94288 84897",
+              link: "https://wa.me/919428884897",
             },
-            { 
-              icon: <FaPhoneAlt className="text-4xl text-blue-500" />, 
-              title: "Phone", 
-              detail: "+91 75678 35879", 
-              link: "tel:+917567835879" 
+            {
+              icon: <FaPhoneAlt className="text-5xl text-blue-500" />,
+              title: "Phone",
+              detail: "+91 75678 35879",
+              link: "tel:+917567835879",
             },
-            { 
-              icon: <FaEnvelope className="text-4xl text-red-500" />, 
-              title: "Email", 
-              detail: "optimawebdesigns12@gmail.com", 
-              link: "mailto:optimawebdesigns12@gmail.com" 
+            {
+              icon: <FaEnvelope className="text-5xl text-red-500" />,
+              title: "Email",
+              detail: "optimawebdesigns12@gmail.com",
+              link: "mailto:optimawebdesigns12@gmail.com",
             },
-            { 
-              icon: <FaMapMarkerAlt className="text-4xl text-yellow-500" />, 
-              title: "Location", 
-              detail: "Ahmedabad, India", 
-              link: "https://www.google.com/maps/place/Sumel+Business+park-+7/@23.0207582,72.6346619,17z/data=!3m1!5s0x395e87acd3d32585:0x2b7304b405866fae!4m10!1m2!2m1!1ssumel+business+park+7,+C-317,+Narol+-+Naroda+Rd,+Soni+ni+chali,+Rehmat+Nagar,+Bapunagar,+Ahmedabad,+Gujarat+380023!3m6!1s0x395e86608b0799b7:0x38a5a7367226ea4a!8m2!3d23.0207254!4d72.6375089!15sCnJzdW1lbCBidXNpbmVzcyBwYXJrIDcsIEMtMzE3LCBOYXJvbCAtIE5hcm9kYSBSZCwgU29uaSBuaSBjaGFsaSwgUmVobWF0IE5hZ2FyLCBCYXB1bmFnYXIsIEFobWVkYWJhZCwgR3VqYXJhdCAzODAwMjNaayJpc3VtZWwgYnVzaW5lc3MgcGFyayA3IGMgMzE3IG5hcm9sIG5hcm9kYSByZCBzb25pIG5pIGNoYWxpIHJlaG1hdCBuYWdhciBiYXB1bmFnYXIgYWhtZWRhYmFkIGd1amFyYXQgMzgwMDIzkgEQY29ycG9yYXRlX29mZmljZZoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQydFdNRlZFVG5SWlZ6RlFZekpHYUZKSFRraGtlbEpNWkZab1ZGUkhZeEFCqgGzARABKh8iG3N1bWVsIGJ1c2luZXNzIHBhcmsgNyBjIDMxNygAMh8QASIb3bdkdIt7WqpRyw51oW3Hh_3ui_6dGAmt6EbfMm0QAiJpc3VtZWwgYnVzaW5lc3MgcGFyayA3IGMgMzE3IG5hcm9sIG5hcm9kYSByZCBzb25pIG5pIGNoYWxpIHJlaG1hdCBuYWdhciBiYXB1bmFnYXIgYWhtZWRhYmFkIGd1amFyYXQgMzgwMDIz4AEA-gEECAAQHQ!16s%2Fg%2F11g8cybfmf?authuser=0&entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D" 
+            {
+              icon: <FaMapMarkerAlt className="text-5xl text-yellow-500" />,
+              title: "Location",
+              detail: "Ahmedabad, India",
+              link: "https://www.google.com/maps/place/Ahmedabad,+Gujarat,+India/",
             },
           ].map((item, i) => (
             <motion.a
@@ -176,15 +271,17 @@ export default function Contact() {
               key={i}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ delay: i * 0.2, duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-black text-white rounded-xl flex flex-col items-center justify-center p-6 hover:scale-105 transition duration-300 cursor-pointer"
+              className="bg-gray-900 text-white rounded-2xl flex flex-col items-center justify-center p-8 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               <div className="mb-4">{item.icon}</div>
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="text-sm mt-1 text-gray-300">{item.detail}</p>
+              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <p className="text-sm mt-2 text-gray-400 text-center">
+                {item.detail}
+              </p>
             </motion.a>
           ))}
         </motion.div>

@@ -9,6 +9,7 @@ import LatestProjects from "./latest/page";
 import Testimonials from "./Customer/page";
 import BlogPage from "./Blog/page";
 import Loader from "./component/Loader";
+import Link from "next/link";
 
 export default function Hero() {
   // Apna WhatsApp number dalna (country code ke sath, bina + ke)
@@ -69,9 +70,11 @@ export default function Hero() {
               <span>💬</span> Start Your Project
             </a>
 
-            <button className="border border-black text-black px-6 py-3 rounded-md text-lg hover:bg-gray-100 hover:scale-105 transition">
-              View Portfolio
-            </button>
+            <Link href="/latest" passHref legacyBehavior>
+    <button className="bg-black cursor-pointer text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
+        View Portfolio
+    </button>
+</Link>
           </div>
         </div>
 

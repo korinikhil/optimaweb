@@ -73,7 +73,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         {/* Tawk.to Script */}
+        {/* Tawk.to Script */}
         <script id="tawk-to" strategy="afterInteractive">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -88,6 +88,34 @@ export default function RootLayout({ children }) {
             })();
           `}
         </script>
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YZRLDNXD0J"
+        />
+
+        <script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YZRLDNXD0J');
+            `,
+          }}
+        />
+
+        <script
+          type="text/javascript"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          id="aisensy-wa-widget"
+          widget-id="aaalbk"
+        >
+        </script>
+
+
         <Navbar />
         {children}
         <Footer />

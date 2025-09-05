@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { FiLayout, FiSmartphone, FiTrendingUp, FiSearch } from "react-icons/fi";
 import Image from "next/image";
 import img from "../../public/smart.png";
+import Link from "next/link";
 
 const cards = [
   {
@@ -94,13 +95,13 @@ export default function Smart() {
         ref={topSectionRef}
         className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10"
       >
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 relative h-64 md:h-96">
           <Image
             src={img}
             alt="Smart Web Solutions"
-            width={800}
-            height={600}
-            className="w-full object-cover aspect-video md:aspect-square rounded-lg"
+            fill
+            style={{ objectFit: 'contain' }} // ya 'cover' agar image ko fill karna ho
+            className="rounded-lg"
             priority
           />
         </div>
@@ -124,9 +125,12 @@ export default function Smart() {
             We want to take your business to the next level, and the services of
             our digital marketing agency in India will definitely get you there.
           </p>
-          <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
-            Let&apos;s Go
-          </button>
+          <Link href="/Service" passHref legacyBehavior>
+            <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
+              Let&apos;s Go
+            </button>
+          </Link>
+
         </div>
       </div>
 

@@ -3,28 +3,29 @@ import { useState } from "react";
 import { FaStar, FaQuoteLeft, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import userImg from '../../public/user.png'
 
 const testimonials = [
   {
-    name: "Dianne Russell",
-    role: "Owner, Architecture Studio",
-    rating: 4.5,
-    image: "/images/user1.jpg",
+    name: "Kailsh shah",
+    role: "Owner, Rajshree Distributors",
+    rating: 4.8,
+    image: userImg,
     text: "Optima Web Design completely transformed our online presence! Our website looks amazing and works flawlessly.",
   },
   {
-    name: "John Doe",
-    role: "CEO, Tech Company",
-    rating: 5.0,
-    image: "/images/user2.jpg",
-    text: "Highly professional team! The design quality and attention to detail are outstanding. I highly recommend them.",
+    name: "Ravi Chauhan",
+    role: "CEO,",
+    rating: 4.9,
+    image: userImg,
+    text: "After Optima revamped our website, we saw a 40% increase in sales. They have a thorough understanding of business objectives",
   },
   {
-    name: "Sarah Johnson",
+    name: "Rajveer",
     role: "Marketing Manager",
     rating: 4.8,
-    image: "/images/user3.jpg",
-    text: "Our sales increased by 40% after Optima redesigned our website. They truly understand business goals.",
+    image: userImg,
+    text: "Highly professional team! The design quality and attention to detail are outstanding. I highly recommend them.",
   },
 ];
 

@@ -45,7 +45,7 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex space-x-4 text-xl">
             <motion.a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=61570359304541"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -54,7 +54,7 @@ export default function Footer() {
               <FaFacebookF />
             </motion.a>
             <motion.a
-              href="https://instagram.com"
+              href="https://www.instagram.com/optima_webdesign/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -63,7 +63,7 @@ export default function Footer() {
               <FaInstagram />
             </motion.a>
             <motion.a
-              href="https://twitter.com"
+              href="https://x.com/optimaweb12"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -72,7 +72,7 @@ export default function Footer() {
               <FaXTwitter />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/optima-webdesign-28a011342/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
