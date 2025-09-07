@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { blogs } from "@/lib/blogs";
 
-export default function BlogPage() {
+export default function Blog() {
   return (
     <section className="py-16 px-6 bg-gray-50 min-h-screen">
       <motion.div
