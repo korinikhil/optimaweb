@@ -121,6 +121,38 @@ export default function Footer() {
                 Contact
               </Link>
             </li>
+            
+          </ul>
+        </motion.div>
+        {/* legal ✅ using <Link /> */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h3 className="text-lg font-semibold mb-4">Legal Links</h3>
+          <ul className="space-y-2">
+           
+            <li>
+              <Link href="/cancellation-refunds" className="hover:underline">
+                refunds & cancellation
+              </Link>
+            </li>
+            <li>
+              <Link href="/Shipping" className="hover:underline">
+                Shipping
+              </Link>
+            </li>
+            <li>
+              <Link href="/Terms-condition" className="hover:underline">
+                Terms-condition
+              </Link>
+            </li>
+            <li>
+              <Link href="/Privacy" className="hover:underline">
+                Privacy Policy
+              </Link>
+            </li>
           </ul>
         </motion.div>
 
