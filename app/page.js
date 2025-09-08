@@ -9,9 +9,8 @@ import LatestProjects from "./latest/page";
 import Testimonials from "./Customer/page";
 import Loader from "./component/Loader";
 import Link from "next/link";
-import Blog from "./blog/page";
-// import BlogPage from "./blog/page";
 
+import BlogSection from './component/BlogSection'
 export default function Hero() {
   // Apna WhatsApp number dalna (country code ke sath, bina + ke)
   const phoneNumber = "917567835879"; // <-- Apna WhatsApp number yaha daalo
@@ -107,8 +106,7 @@ export default function Hero() {
       </section>
       <About />
       <Smart />
-      {/* <BlogPage /> */}
-      <Blog/>
+      <BlogSection/>
       <LatestProjects />
       <Testimonials />
     </>

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-fix": "echo 'Force rebuild for vercel'"
+    "vercel-fix": "echo 'Force rebuild for vercel'",
+    "vercel-fixes": "echo 'Force rebuild for vercel'"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
