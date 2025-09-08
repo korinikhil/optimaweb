@@ -59,10 +59,15 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s),
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              (function(w,d,s,l,i){
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),
+                    dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;
+                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-NLHH3XGV');
             `,
           }}
@@ -97,7 +102,7 @@ export default function RootLayout({ children }) {
           />
         </noscript>
 
-        {/* Tawk.to via next/script (fix getElementsByTagName and insertion) */}
+        {/* Tawk.to via next/script (fixed) */}
         <Script id="tawk-to" strategy="afterInteractive">
           {`
             window.Tawk_API = window.Tawk_API || {};
@@ -108,7 +113,7 @@ export default function RootLayout({ children }) {
               s1.src = "https://embed.tawk.to/6876017e749494190c45200f/1j06fbm1j";
               s1.charset = "UTF-8";
               s1.setAttribute("crossorigin", "*");
-              var s0 = document.getElementsByTagName("script");
+              var s0 = document.getElementsByTagName("script")[0];
               if (s0 && s0.parentNode) {
                 s0.parentNode.insertBefore(s1, s0);
               } else {
@@ -117,8 +122,6 @@ export default function RootLayout({ children }) {
             })();
           `}
         </Script>
-
-      
 
         <Navbar />
         {children}
