@@ -27,7 +27,7 @@ export const metadata = {
     title: "Optima Web Design | Affordable Website Design & Development Worldwide",
     description:
       "Grow your business online with Optima Web Design. We create responsive, SEO-friendly, and customized websites designed to attract customers and increase sales.",
-    url: "https://www.optimawebdesign.in",
+    url: "https://optimawebdesign.in",
     siteName: "Optima Web Design",
     images: [
       { url: "/logo.ico", width: 1200, height: 630, alt: "Optima Web Design - Website Design Agency" },
