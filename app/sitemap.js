@@ -18,12 +18,12 @@ export default function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    // {
-    //   url: 'https://optimawebdesign.in/blog',
-    //   lastModified: new Date(),
-    //   changeFrequency: 'weekly',
-    //   priority: 0.8,
-    // },
+    {
+      url: 'https://optimawebdesign.in/blog',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
     {
       url: 'https://optimawebdesign.in/contact-us',
       lastModified: new Date(),
